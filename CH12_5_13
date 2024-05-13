@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <conio.h>
+
+int main(void)
+{
+	printf("> 문자열의 시작주소: %p\n", "apple"); //문자열 상수: "apple" => "apple"문자열의 시작주소
+	printf("> \"apple\" + 1: %p\n", "apple"+1);
+	printf("> %c\n", *"apple");
+	printf("> %c\n", *("apple" + 1));// *(a+1) ==a[1]
+	printf("> %c\n", "apple"[2]);// *("apple"+2)
+	char* p;
+	p = "apple";
+
+	printf("> 문자열의 시작주소: %p\n", p); //문자열 상수: "apple" => "apple"문자열의 시작주소
+	printf("> \"apple\" + 1: %p\n", p + 1);
+	printf("> %c\n", *p);
+	printf("> %c\n", *(p + 1));// *(++p)
+	printf("> %c\n", p[2]);// *(++p)
+
+	return 0;
+}
+
+/* int main(void)
+{
+  char *p = "water melon";
+
+  printf("> 문자열 출력: %s\n", p);
+	printf("> 문자열 출력: ");
+
+	while (*p != '\0') {
+		putchar(*p);
+		p++;
+	}
+	return 0;
+}
+*/
+
+/*int main(void)
+{
+	char* pc1, * pc2;
+	pc1	= "water melon";
+	pc2 = "water-melon";
+
+	printf("> 두 배열의 주소: pc1 = %p, pc2 = %p\n", pc1, pc2); 
+	//동일한 문자열 상수에 대해서는 컴파일러가 하나의 문자열 상수를 만든 후 이를 중복 사용하는 형태로 최적화함
+
+	
+	return 0;
+}
+*/
+
+/*
+int main(void)
+{
+	char str[20]; // 문자배열에 스트링(문자열) 입력
+	int index;
+
+	printf("> 문자열 입력: ");
+	scanf("%s", str);
+	index = 0; //0번째 문자부터 찍음
+	while (str[index] !='\0') {
+		printf("> Ascii: %d, char: %c\n", str[index], str[index]);//자주 쓰여서 기억하면 좋음
+		index++;
+	}
+	printf("> 문자열 입력: ");
+	scanf("%s", str); //인식하는 문자가 나오기 전 스페이스나 공백 탭은 무시한다 (space)(tab)abc(space)def(enter)==abc 전에 공백 탭은 무시
+	index = 0; //0번째 문자부터 찍음
+	while (str[index] != '\0') {
+		printf("> Ascii: %d, char: %c\n", str[index], str[index]);
+		index++;
+	}
+	
+	return 0;
+}
+*/
+
+
