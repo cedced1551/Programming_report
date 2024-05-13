@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <conio.h>
+
+int main(void)
+{
+	char str[5]; // 문자배열에 스트링(문자열) 입력
+	int index;
+
+	printf("> 문자열 입력: ");
+	//scanf("%s", str);
+	//gets(str);
+	fgets(str,sizeof(str), stdin); //저장할 공간, max버퍼 사이즈, stdin(키보드로부터 읽어라)
+	index = 0; //0번째 문자부터 찍음
+	while (str[index] !='\0') {
+		printf("> Ascii: %d, char: %c\n", str[index], str[index]);//자주 쓰여서 기억하면 좋음
+		index++;
+	}
+	printf("> 문자열 입력: ");
+	//scanf("%s", str);
+	//gets(str); //a(space)b(enter)->a(space)b0 =>enter 는 출력 안됨 (3개 출력된다)
+	fgets(str, sizeof(str), stdin);//a(space)b(enter) ->a(space)b(enter)0 => enter까지 다 출력되고 마지막에 0추가됨(4개출력)
+	index = 0; //0번째 문자부터 찍음
+	while (str[index] != '\0') {
+		printf("> Ascii: %d, char: %c\n", str[index], str[index]);
+		index++;
+	}
+	
+	return 0;
+}
+
