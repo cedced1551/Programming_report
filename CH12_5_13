@@ -56,14 +56,16 @@ int main(void)
 	int index;
 
 	printf("> 문자열 입력: ");
-	scanf("%s", str);
+	//scanf("%s", str);
+	gets(str); //gets는 scanf처럼 무시하는 문자 없고 다 들어감
 	index = 0; //0번째 문자부터 찍음
 	while (str[index] !='\0') {
 		printf("> Ascii: %d, char: %c\n", str[index], str[index]);//자주 쓰여서 기억하면 좋음
 		index++;
 	}
 	printf("> 문자열 입력: ");
-	scanf("%s", str); //인식하는 문자가 나오기 전 스페이스나 공백 탭은 무시한다 (space)(tab)abc(space)def(enter)==abc 전에 공백 탭은 무시
+	//scanf("%s", str); //인식하는 문자가 나오기 전 스페이스나 공백 탭은 무시한다 (space)(tab)abc(space)def(enter)==abc 전에 공백 탭은 무시
+	gets(str);
 	index = 0; //0번째 문자부터 찍음
 	while (str[index] != '\0') {
 		printf("> Ascii: %d, char: %c\n", str[index], str[index]);
