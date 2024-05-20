@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <conio.h>
+	
+int main(void) {
+	int data[2][3] = { {1,2,3}, {4} };
+
+	printf("> data[0][0] = %d\n", *data[1]);
+	printf("> sizeof(data) = %d\n", sizeof(data));
+	printf("> sizeod(data[0]) = %d바이트\n", sizeof(data[0]));
+
+	return 0;
+}
