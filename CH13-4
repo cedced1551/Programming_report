@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <conio.h>
+	
+int *ADD(int a, int b);//함수 프로토타입 선언
+int main(void) {
+
+	int a, b, *ptr;
+	a = 100;
+	b = 200;
+	ptr = ADD(a, b);// 결과가 저장된 곳의 주소  -> ptr
+	printf("main> result = %d\n", *ptr);
+
+	return 0;
+
+}
+
+int *ADD(int a, int b) {
+
+	//int result; //결과 저장 -> 지역변수라 함수 종료와 함께 사라짐
+	static int result;
+	result = a + b;
+	return &result;
+}
