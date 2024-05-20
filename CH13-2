@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <conio.h>
+
+void func1(void);
+int main(void) {
+
+	 //지역변수(stack에 생성)
+	int i;
+	for (i = 0; i < 5; i++) {
+		func1();
+	}
+
+	//func1();
+
+	return 0;
+}
+void func1(void) {
+	
+	static int a = 0;
+	a++;
+	printf("func1> a = %d\n", a);
+
+
+} 
+//정적 지역 변수는 코드 블록 내에 지역변수처럼 선언ㅇ하여 사용범위가 블록 내부로 제한됨
+//정적 지역 변수는 스택에 생성되지 않음 전역변수처럼 프로그램 종료시까지 유지됨
+//여러번 호출 된 경우 함수 호출 간에 정적 지역 변수를 공유할 수 있다.
