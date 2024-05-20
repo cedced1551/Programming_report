@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <conio.h>
+
+//값에 의한 호출(call by value)
+	
+int ADD(int a, int b);//함수 프로토타입 선언
+int main(void) {
+
+	int a, b, result;
+	a = 100;
+	b = 200;
+	result = ADD(a, b);
+	printf("main> result = %d\n", result);
+
+	return 0;
+
+}
+
+int ADD(int a, int b) {
+
+	int temp;
+	temp = a + b;
+	return temp;
+}
+
+
+//주소에 의한 호출(call by reference)
+
+
+#include <stdio.h>
+#include <conio.h>
+	
+int ADD(int a, int b, int resAdd, int resSub);//함수 프로토타입 선언
+int main(void) {
+
+	int a, b, resAdd, resSub;
+	a = 100;
+	b = 200;
+	ADDSUB(a, b, &resAdd, &resSub);
+	printf("main> result ADD = %d, SUB =%d\n", resAdd, resSub);
+
+	return 0;
+
+}
+
+int ADDSUB(int a, int b, int *resAdd, int *resSub) {
+
+	*resAdd = a + b;
+	*resSub = a - b;
+}
