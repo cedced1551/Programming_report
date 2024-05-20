@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <conio.h>
+
+//전역변수와 지역변수
+
+int g; //블럭 내가 아님..global(전역 변수)...코드 data 부분에 생성
+	   	//자동 초기화 = 0 
+int main(void)
+{
+	//블럭
+	int a; //지역 변수 (dynamic 특성) -> stack에 생성...공간만 마련
+
+	printf("main-1> g = %d, a = %d\n", g, a);
+
+	{
+		int g = 100;
+		printf("main-2> g = %d\n", g);
+	}
+	printf("main-3> g = %d\n", g);
+	return 0;
+}
