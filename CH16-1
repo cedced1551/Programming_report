@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+	
+int main(void) {
+	
+	int *iPtr;
+	double *dPtr;
+
+	iPtr = (int*)malloc(sizeof(int));
+	if (iPtr == NULL) {
+		printf("<ERROR> malloc fail.\n");
+		return 1;
+	}
+
+	dPtr = (int*)malloc(sizeof(double));
+	if (dPtr == NULL) {
+		printf("<ERROR> malloc fail.\n");
+		return 1;
+	}
+
+	*iPtr = 100;
+	*dPtr = 3.14;
+
+	printf("> *iPtr = %d\n", *iPtr);
+	printf("> *dPtr = %lf\n", *dPtr);
+
+	return 0;
+}
