@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <conio.h>
+	
+int main(void) {
+	
+	char str[5][20];//여러개의 문자열을 저장할 수 있는 공간
+					//2차원 문자 배열
+
+	for (int i = 0; i < 2; i++) {
+		printf("> 문자열을 입력하세요: ");
+		scanf("%s", str[i]);
+	}
+
+	for (int i = 0; i < 2; i++) {
+		printf("> 문자열[%d] = %s\n", i, str[i]);
+
+	}
+
+	return 0;
+}
