@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+	//동적 메모리 할당을 통해 할당된 공간의 시작주소를 포인터 변수에 저장하고 배열 처럼 할당된 공간을 사용할 수 있음
+//동적으로 100개의 정수를 저장할 메모리 공간을 할당하여 데이터를 초기화하고, 100개 데이터의 합과 평균을 구하는 함수 작성하기.
+
+int main(void) {
+	
+	//정수 100개 : 100 * sizeof(int) = 400바이트
+	int *data, i, sum =0;
+	
+	//data=malloc(400); //malloc(100*sizeof(int));
+	data = (int*)calloc(100, sizeof(int));
+
+	if (data == NULL) {
+
+		printf("<ERROR> malloc() fail.");
+		return 1;
+	}
+	//공간 초기화: 1~100
+	//for (i = 0; i < 100; i++) {
+	//	
+	//	data[i] = i = 1;//= *(data + i) = i + 1; 
+	//}
+
+	//합 구하기
+
+	for (i = 0; i < 100; i++) {
+		sum += data[i];
+	}
+
+	printf(">sum = %d\n", sum);
+	printf(">avg = %.2lf\n", sum/100.0);
+	free(data);
+
+	return 0;
+}
