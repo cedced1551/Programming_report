@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <conio.h>
+	
+int main(void) {
+	char data[2][20] = { "ABCDEFG", "abcdefg"};
+	char* ptr[2];
+
+	for(int i = 0; i<2;i++){
+		ptr[i] = data[i];
+	}
+
+	for (int i = 0; i < 2; i++) {
+		printf("> 문자열 [%d] = %s	", i, ptr[i]);
+		for (int j = 0; j < 3; j++) {
+			printf("%c", ptr[i][j]);
+
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
