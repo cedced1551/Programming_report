@@ -3,7 +3,7 @@
 
 // 구조체 structure
 
-struct stType01{ 
+struct stTyle01{ 
 	char	ele01; // 1 byte
 	int		ele02; // 4 byte
 	double	ele03; // 8 byte
@@ -14,7 +14,7 @@ struct stType01{
 
 int main(void)
 {
-	struct stType01 st01; //구조체 변수
+	struct stTyle01 st01; //구조체 변수
 	printf("> st01 전체 크기 =%d 바이트\n", sizeof(st01)); //st01 전체 크기
 	printf("> st01.ele01 크기 = %d 바이트\n", sizeof(st01.ele01));
 	printf("> st01.ele02 크기 = %d 바이트\n", sizeof(st01.ele02));
