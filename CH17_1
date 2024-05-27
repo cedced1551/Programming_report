@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+// 구조체 structure
+
+struct student{ //구조체 이름
+	char	name[20]; //학생 이름 저장
+	int		ID;
+	int		age;
+
+};
+
+typedef struct student stType; //type를 새로 정의 한다 struct student를 stType으로 변경한다 
+
+int main(void)
+{
+	struct student st01; //학생 정보를 저장하기 위한 구조체 변수 선언
+	stType st02;
+
+	st01.ID = 2024001; //학번 저장
+	st01.age = 20; //나이 저장
+	strcpy(st01.name, "홍길동"); //우측에 있는 값을 좌측으로 copy
+
+	st02 = st01; //구조체 복사 가능
+
+	printf("> st01 학생 정보: 이름:%s, 학번:%d, 나이:%d\n", st01.name, st01.ID, st01.age);
+	printf("> st02 학생 정보: 이름:%s, 학번:%d, 나이:%d\n", st02.name, st02.ID, st02.age);
+
+	return 0;
+}
