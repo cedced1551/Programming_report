@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+// 구조체 structure
+
+struct stType01{ 
+	char	ele01; // 1 byte
+	int		ele02; // 4 byte
+	double	ele03; // 8 byte
+
+};
+
+int main(void)
+{
+	struct stType01 st01; //구조체 변수
+	printf("> st01 시작주소 =%d .\n",&st01); //st01 구조체의 시작주소
+	printf("> st01.ele01 시작주소 = %d\n", &st01.ele01);
+	printf("> st01.ele02 시작주소 = %d\n", &st01.ele02);
+	printf("> st01.ele03 시작주소 = %d\n", &st01.ele03);
+
+
+	return 0;
+}
