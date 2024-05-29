@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+// 구조체 structure
+#pragma pack(push, 1)
+
+struct stType01{ 
+	char	ele01; // 1 byte
+	int		ele02; // 4 byte
+	double	ele03; // 8 byte
+};
+#pragma pack(pop)
+
+struct stType02 {
+	char	ele01; // 1 byte
+	int		ele02; // 4 byte
+	double	ele03; // 8 byte
+};
+
+int main(void)
+{
+	struct stType01 st01; 
+	struct stType02 st02;
+	printf("> sizeof st01 = %d\n", sizeof(st01));
+	printf("> sizeof st02 = %d\n", sizeof(st02));
+
+	return 0;
+}
