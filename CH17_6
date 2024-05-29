@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+void exchange(int* x, int* y);
+struct point {
+	int x;
+	int y;
+};
+
+int main(void)
+{
+	struct point p01 = { 100, 200 };
+	printf("1> 점의 좌표 : x = %d, y =%d\n", p01.x, p01.y);
+
+	exchange( &p01.x, &p01.y ); //x좌표와 y좌표 값을 교환
+	printf("2> 점의 좌표 : x = %d, y =%d\n", p01.x, p01.y);
+
+	return 0;
+}
+
+void exchange(int* x, int* y)
+{
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
