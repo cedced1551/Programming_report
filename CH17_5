@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+struct subject {
+	int math;
+	int eng;
+	int sci;
+};
+typedef struct subject typeSub;
+
+struct student {
+	char	name[20]; //이름
+	int		ID; //학번
+	int		age; //나이
+	char	*addr; // 주소, 공간을 동적으로 할당
+	typeSub grade; //구조체 내에 구조체
+};
+typedef struct student typeST;
+
+int main(void)
+{
+	typeST st01 = { "홍길동", 2024001, 20, NULL, { 85, 90, 92 } };
+	st01.addr = (char*)malloc(100);//포인터 변수 활용
+	strcpy(st01.addr, "경기도 시흥시 정왕동 1212");
+
+	//strcpy(st01.name, "홍길동");
+	//st01.ID = 2024001;
+	//st01.age = 20;
+	//st01.addr = (char*)malloc(100);//포인터 변수 활용
+	//strcpy(st01.addr, "경기도 시흥지 정왕동 1212");
+	//st01.grade.eng = 90;
+	//st01.grade.math = 85;
+	//st01.grade.sci = 92;
+
+
+	printf("> 이름: %s\n", st01.name);
+	printf("> 학번: %d\n", st01.ID);
+	printf("> 나이: %d\n", st01.age);
+	printf("> 주소: %s\n", st01.addr);
+	printf("> 과목별 점수: 영어: %d, 수학: %d, 과학: %d \n", st01.grade.eng, st01.grade.math, st01.grade.sci);
+
+	return 0;
+}
