@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	FILE* fp;
+	fp = fopen("mydata.txt", "r");
+	if (fp == NULL){
+		printf("<ERROR> 파일 열기 실패 \n");
+		return 1;
+}
+	else {
+		printf("> 파일 열기 성공 \n");
+	}
+	fclose(fp);
+
+	return 0;
+}
+
+//mydata.txt 파일 안 만들어놔서 파일 열기 실패
