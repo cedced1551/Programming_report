@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+#define MAX_NUM	3
+#define PI		3.141592
+
+double getArea(struct circle* aPtr, int count);
+struct circle {
+	int x;
+	int y;
+	int r;
+};
+
+int main(void)
+{
+	struct circle aCircle[MAX_NUM] = { { 1, 2, 3 }, { 3, 4, 4 },{ 5, 6, 5 } };
+	int index;
+	double sum = 0.0;
+
+	sum = getArea(aCircle, MAX_NUM);
+	printf("> result = %lf\n", sum);
+
+	return 0;
+}
+
+double getArea(struct circle* aPtr, int count)
+{
+	int i;
+	double sum = 0.0;
+	for (i = 0; i < count;i++) {
+		sum += (aPtr[i].r * aPtr[i].r * PI);
+	}
+
+
+	return sum;
+}
+
