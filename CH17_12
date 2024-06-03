@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+enum week {SAT, SUN, MON, TUE, WED, THU, FRI};
+int main(void)
+{
+	enum week day;
+	day = WED;
+	switch (day) {
+	case SAT:
+	case SUN:
+		printf("> 오늘은 주말입니다. \n");
+		break;
+	case MON:
+	case TUE:
+	case WED:
+	case THU:
+	case FRI:
+		printf("> 오늘은 평일입니다. \n");
+	}
+
+	return 0;
+}
+
