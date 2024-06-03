@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+#define MAX_NUM	3
+#define PI		3.141592
+
+double getArea(struct circle* ptr);
+
+//자기 참조 구조체
+struct circle {
+	int x;
+	int y;
+	int r;
+	struct circle *next;
+};
+
+int main(void)
+{
+	struct circle a = { 1, 2, 3, NULL };
+	struct circle b = { 3, 4, 4, NULL };
+	struct circle c = { 5, 6, 5, NULL };
+	struct circle* ptr;
+
+	int index;
+	double sum = 0.0;
+
+	a.next = &b;
+	b.next = &c;
+	ptr = &a;
+
+	sum = getArea(ptr);
+	printf("> result = %lf\n", sum);
+
+	return 0;
+}
+
+double getArea(struct circle* ptr)
+{
+
+	double sum = 0.0;
+
+	while (ptr != NULL) {
+		//원의 면적 계산
+		sum += (ptr->r * ptr->r * PI);
+		ptr = ptr->next;
+	}
+	
+	return sum;
+}
+
