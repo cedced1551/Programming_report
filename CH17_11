@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+struct A {
+
+	int		x;
+	char	y[4];
+};
+union B {
+	int		x;
+	char	y[4];
+};
+int main(void)
+{
+	struct	A num01;
+	union	B num02;
+
+	printf("> sizeof(num01) = %d 바이트\n", sizeof(num01));
+	printf("> sizeof(num02) = %d 바이트 \n", sizeof(num02));
+
+	return 0;
+}
+
+
+/*struct A {
+
+	int		x;
+	char	y[4];
+};
+union B {
+	int		x;
+	char	y[4];
+};
+int main(void)
+{
+	struct	A num01 ;
+	union	B num02;
+
+	printf("> sizeof(num01) = %d 바이트\n", sizeof(num01));
+	printf("> sizeof(num02) = %d 바이트 \n", sizeof(num02));
+	num01.x = 0x01020304;
+	num02.x = 0x01020304;
+	printf("num01.y: %d %d %d %d \n", num01.y[0], num01.y[1], num01.y[2], num01.y[3]);
+	printf("num02.y: %d %d %d %d \n", num02.y[0], num02.y[1], num02.y[2], num02.y[3]);
+
+	return 0;
+}*/
