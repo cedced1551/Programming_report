@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	FILE* fp;
+	char str[20] = "banana";
+	char ch;
+	int i;
+	fp = fopen("mydata.txt", "w"); // r =read/ w = write 파일을 열어서 기존에 있는 내용 덮어씀
+	if (fp == NULL) { //오픈할 파일 없음
+		printf("<ERROR> fopen() fail.\n");
+		return 1;
+
+	}
+	
+	for (i = 0; str[i] != '\0'; i++) {
+
+		putchar(str[i]); // 화면에 출력
+		fputc(str[i], fp); //파일에 출력
+	}
+	
+	fclose(fp);
+
+	return 0;
+}
+
