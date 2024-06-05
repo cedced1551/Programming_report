@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	FILE* fp;
+	char ch;
+	fp = fopen("a.txt", "w+");
+	if (fp == NULL) {
+		printf("<ERROR> 파일을 열 수가 없습니다.\n");
+		return 1;
+	}
+
+	fputc('a', fp);
+	fputc('b', fp);
+	fseek(fp, 0, SEEK_SET); // SEEK_END  SEEK_CUR 포인터가 맨 앞으로-> 읽히는건 a, txt파일에서 보이는건 ab
+
+	ch = fgetc(fp);
+	putchar(ch);
+	
+	fclose(fp);
+
+	return 0;
+}
